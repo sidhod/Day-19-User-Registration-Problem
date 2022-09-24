@@ -40,7 +40,7 @@ public class UserRegistrationProblem {
 	// Password method for check Password Validation
 	public static void Password(String input) {
 		//
-		Pattern pattern = Pattern.compile("(?=.*?[0-9])(?=.*[A-Z]){8,}");
+		Pattern pattern = Pattern.compile("(?=.*?[0-9])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{8,}");
 		Matcher matcher = pattern.matcher(input);
 		boolean matchFound = matcher.find();
 		if (matchFound)
