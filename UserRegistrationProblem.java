@@ -37,6 +37,17 @@ public class UserRegistrationProblem {
 			System.out.println("Invalid Mobile Number\n");
 	}
 
+	// Password method for check Password Validation
+	public static void Password(String input) {
+		Pattern pattern = Pattern.compile("\\w{8,}");
+		Matcher matcher = pattern.matcher(input);
+		boolean matchFound = matcher.find();
+		if (matchFound)
+			System.out.println("Valid Password\n");
+		else
+			System.out.println("Invalid Password\n");
+	}
+
 	// main
 	public static void main(String[] args) {
 		System.out.println("***************User Registration Problem*******************");
@@ -64,10 +75,17 @@ public class UserRegistrationProblem {
 
 		// Get User Mobile Number
 		Scanner sc4 = new Scanner(System.in);
-		System.out.print("Enter the Email:");
+		System.out.print("Enter MobileNumber:");
 		String MobileNumber = sc4.next();
 		// Pass Mobile Number
 		MobileNumber(MobileNumber);
+
+		// Get User Password
+		Scanner sc5 = new Scanner(System.in);
+		System.out.print("Enter Password:");
+		String Password = sc5.next();
+		// Pass Mobile Number
+		Password(Password);
 
 	}
 
