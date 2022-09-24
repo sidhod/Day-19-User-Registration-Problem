@@ -26,6 +26,17 @@ public class UserRegistrationProblem {
 			System.out.println("Invalid Email Address\n");
 	}
 
+	// Mobile Number method for check Mobile Number Validation
+	public static void MobileNumber(String input) {
+		Pattern pattern = Pattern.compile("^[0-9]{1,2}\\\\s[0-9]{10}");
+		Matcher matcher = pattern.matcher(input);
+		boolean matchFound = matcher.find();
+		if (matchFound)
+			System.out.println("Valid Mobile Number\n");
+		else
+			System.out.println("Invalid Mobile Number\n");
+	}
+
 	// main
 	public static void main(String[] args) {
 		System.out.println("***************User Registration Problem*******************");
@@ -50,6 +61,13 @@ public class UserRegistrationProblem {
 		String Email = sc3.next();
 		// Pass email address
 		EmailAddress(Email);
+
+		// Get User Mobile Number
+		Scanner sc4 = new Scanner(System.in);
+		System.out.print("Enter the Email:");
+		String MobileNumber = sc4.next();
+		// Pass Mobile Number
+		MobileNumber(MobileNumber);
 
 	}
 
