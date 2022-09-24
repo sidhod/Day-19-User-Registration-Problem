@@ -15,6 +15,17 @@ public class UserRegistrationProblem {
 			System.out.println("Invalid Name\n");
 	}
 
+	// Email method for check Email Validation
+	public static void EmailAddress(String input) {
+		Pattern pattern = Pattern.compile("^(abc.)[a-z]+@(bl.co.)[a-z]{2}$");
+		Matcher matcher = pattern.matcher(input);
+		boolean matchFound = matcher.find();
+		if (matchFound)
+			System.out.println("Valid Email Address\n");
+		else
+			System.out.println("Invalid Email Address\n");
+	}
+
 	// main
 	public static void main(String[] args) {
 		System.out.println("***************User Registration Problem*******************");
@@ -32,6 +43,13 @@ public class UserRegistrationProblem {
 		String LastName = sc2.next();
 		// Pass last name
 		UserFirstLastName(LastName);
+
+		// Get User Email Address
+		Scanner sc3 = new Scanner(System.in);
+		System.out.print("Enter the Email:");
+		String Email = sc3.next();
+		// Pass email address
+		EmailAddress(Email);
 
 	}
 
